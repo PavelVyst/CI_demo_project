@@ -8,7 +8,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
+      
+      - name: Check structure
+        run: |
+          pwd
+          ls -la
+          ls -la app
+      
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
