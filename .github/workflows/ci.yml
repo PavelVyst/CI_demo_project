@@ -18,7 +18,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Refresh staging data
-        run: python scripts/data_refresh.py
+        run: python scripts/refresh_metadata.py
 
       - name: Run app
         run: |
