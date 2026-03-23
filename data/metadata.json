@@ -1,0 +1,51 @@
+{
+  "last_updated": "2026-03-23T13:21:16.373385",
+  "image_count": 9,
+  "images": [
+    {
+      "name": "00001.jpg",
+      "path": "/images/00001.jpg",
+      "size": 45769
+    },
+    {
+      "name": "00002.jpg",
+      "path": "/images/00002.jpg",
+      "size": 22842
+    },
+    {
+      "name": "00003.jpg",
+      "path": "/images/00003.jpg",
+      "size": 23575
+    },
+    {
+      "name": "00004.jpg",
+      "path": "/images/00004.jpg",
+      "size": 28742
+    },
+    {
+      "name": "00005.jpg",
+      "path": "/images/00005.jpg",
+      "size": 27766
+    },
+    {
+      "name": "00006.jpg",
+      "path": "/images/00006.jpg",
+      "size": 44206
+    },
+    {
+      "name": "00007.jpg",
+      "path": "/images/00007.jpg",
+      "size": 36785
+    },
+    {
+      "name": "00008.jpg",
+      "path": "/images/00008.jpg",
+      "size": 43881
+    },
+    {
+      "name": "00009.jpg",
+      "path": "/images/00009.jpg",
+      "size": 78157
+    }
+  ]
+}
