@@ -17,5 +17,5 @@ def get_images():
     if not os.path.exists(path):
         raise HTTPException(status_code=500, detail="metadata.json not found")
 
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)

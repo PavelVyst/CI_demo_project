@@ -1,11 +1,10 @@
 import os
 import requests
 
-IMAGE_URLS = []
-
-for index_images in range(1,10):
-
-    IMAGE_URLS.append(f"https://aft-vbi-pds.s3.amazonaws.com/bin-images/0000{index_images}.jpg")
+IMAGE_URLS = [
+    f"https://aft-vbi-pds.s3.amazonaws.com/bin-images/0000{i}.jpg"
+    for i in range(1, 10)
+]
 
 OUTPUT_DIR = "data/images"
 
@@ -19,8 +18,12 @@ def download_images():
 
         print(f"Downloading {url}...")
 
-        r = requests.get(url)
+        r = requests.get(url, timeout=15)
         r.raise_for_status()
+
+        content_type = r.headers.get("Content-Type", "")
+        if "image" not in content_type.lower():
+            raise ValueError(f"URL did not return an image: {url}")
 
         with open(path, "wb") as f:
             f.write(r.content)
