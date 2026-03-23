@@ -13,8 +13,8 @@ def refresh_metadata():
 
     images = []
 
-    for filename in os.listdir(IMAGES_DIR):
-        # фильтрация
+    for filename in sorted(os.listdir(IMAGES_DIR)):       
+        
         if not filename.lower().endswith(ALLOWED_EXTENSIONS):
             continue
 
@@ -38,7 +38,7 @@ def refresh_metadata():
         "images": images
     }
 
-    with open(METADATA_FILE, "w") as f:
+    with open(METADATA_FILE, "w", encoding="utf-8") as f:
         json.dump(metadata, f, indent=2)
 
     print(f"Metadata refreshed: {len(images)} images")

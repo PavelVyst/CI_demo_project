@@ -1,8 +1,13 @@
-from fastapi import FastAPI, HTTPException
-import json
+from fastapi import FastAPI,HTTPException
 import os
+import json
 
 app = FastAPI()
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 
 @app.get("/images")
@@ -13,9 +18,4 @@ def get_images():
         raise HTTPException(status_code=500, detail="metadata.json not found")
 
     with open(path) as f:
-        return json.load(f)
-
-@app.get("/images")
-def get_images():
-    with open("data/metadata.json") as f:
         return json.load(f)

@@ -4,7 +4,7 @@ def test():
     r = requests.get("http://localhost:8000/health")
     assert r.status_code == 200
 
-    r = requests.get("http://localhost:8000/items")
+    r = requests.get("http://localhost:8000/images")
     assert r.status_code == 200
 
     print("Smoke test passed")
