@@ -2,8 +2,13 @@ import json
 import os
 from datetime import datetime
 
+ENV = os.getenv("APP_ENV", "staging")
+if ENV == "staging":
+    METADATA_FILE = "data/metadata_staging.json"
+else:
+    METADATA_FILE = "data/metadata.json"
 IMAGES_DIR = "data/images"
-METADATA_FILE = "data/metadata.json"
+#METADATA_FILE = "data/metadata.json"
 ALLOWED_EXTENSIONS = (".jpg", ".jpeg", ".png")
 
 

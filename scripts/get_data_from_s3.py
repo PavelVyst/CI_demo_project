@@ -30,6 +30,19 @@ def download_images():
 
         print(f"Saved to {path}")
 
+def delete_images():
+    for filename in os.listdir(OUTPUT_DIR):
+        file_path = os.path.join(OUTPUT_DIR, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)  # Удаление файла или ссылки
+
+        except Exception as e:
+            print(f'Не удалось удалить {file_path}. Причина: {e}')
 
 if __name__ == "__main__":
+
     download_images()
+    print("images have been download")
+    delete_images()
+    print("images have been deleted")
